@@ -21,5 +21,6 @@ endfunction
 getd
 
 check([1,-1,6+8*%i],[1,-1,6+8*%i])
+check([1,-1,6+8*%i]',[1,-1,6+8*%i]')
 
 exit
