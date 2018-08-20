@@ -67,6 +67,17 @@ getd
 		disp("-----Finished Running Tests for pskdemod")
 		//pskdemod tests finished
 	//
+		//qammod tests
+		disp("-----Running Tests for qammod")
+		//
+			disp("  *Test 1: Four qam")
+			P = qammod([0,1 ; 2,3], 4)
+			P_octave = [-1+%i, -1-%i ; 1+%i, 1-%i]
+			check(P, P_octave)
+		//
+		disp("-----Finished Running Tests for qammod")
+		//qammod tests finished
+	//
 //The tests end
 
 exit
