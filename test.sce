@@ -23,30 +23,50 @@ endfunction
 
 getd
 
-//The tests
+//The tests start
 	//
 		//pskmod tests
 		disp("-----Running Tests for pskmod")
 		//
 			disp("  *Test 1: Two arguments")
-			P = pskmod(matrix([0,1 ; 2,3],-1,2), 4)
+			P = pskmod([0,1 ; 2,3], 4)
 			P_octave = [1, %i ; -1, -%i]
 			check(P, P_octave)
 		//
 			disp("  *Test 2: Initial Phase")
-			P = pskmod(matrix([0,1 ; 2,3],-1,2), 4, %pi/2)
+			P = pskmod([0,1 ; 2,3], 4, %pi/2)
 			P_octave = [%i, -1 ; -%i, 1]
 			check(P, P_octave)
 		//
 			disp("  *Test 3: Gray option")
-			P = pskmod(matrix([0,1 ; 2,3],-1,2), 4, %pi/2, 'Gray')
+			P = pskmod([0,1 ; 2,3], 4, %pi/2, 'Gray')
 			P_octave = [%i, -1 ; 1, -%i]
 			check(P, P_octave)
 		//
 		disp("-----Finished Running Tests for pskmod")
 		//pskmod tests finished
 	//
+		//pskdemod tests
+		disp("-----Running Tests for pskdemod")
 		//
+			disp("  *Test 1: Two arguments")
+			P = pskdemod([1,-1 ; %i,-%i], 4)
+			P_octave = [0, 2 ; 1, 3]
+			check(P, P_octave)
+		//
+			disp("  *Test 2: Initial phase")
+			P = pskdemod([1,-1 ; %i,-%i], 4, %pi/2)
+			P_octave = [3, 1 ; 0, 2]
+			check(P, P_octave)
+		//
+			disp("  *Test 3: Gray code case")
+			P = pskdemod([1,-1 ; %i,-%i], 4, %pi/2, 'Gray')
+			P_octave = [2, 1 ; 0, 3]
+			check(P, P_octave)
+		//
+		disp("-----Finished Running Tests for pskdemod")
+		//pskdemod tests finished
 	//
+//The tests end
 
 exit
