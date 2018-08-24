@@ -78,6 +78,17 @@ getd
 		disp("-----Finished Running Tests for qammod")
 		//qammod tests finished
 	//
+		//qamdemod tests
+		disp("-----Running Tests for qamdemod")
+		//
+			disp("  *Test 1: Four qam")
+			P = qammod([0,1 ; 2,3], 4)
+			Q = qamdemod(P,4)
+			Q_octave = [0,1;2,3]
+			check(Q, Q_octave)
+		//
+		disp("-----Finished Running Tests for qamdemod")
+		//qamdemod tests finished
 //The tests end
 
 exit
