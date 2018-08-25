@@ -21,10 +21,11 @@ function Q = qamdemod(x, m)
 		Q = zeros(x_flat)
 		l = length(x_flat)
 		for i = 1:l
-			[dummy, Q(i)] = min( abs(x_flat - L) )
+			//Compute distance from each constellation point,
+			//and choose the nearest one
+			[dummy, Q(i)] = min( abs(x_flat(i) - L) )
 		end
 		Q = Q-1
 		Q = matrix(Q, x_dim)
-		disp(Q)
 	//
 endfunction
