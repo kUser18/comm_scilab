@@ -89,6 +89,19 @@ getd
 		//
 		disp("-----Finished Running Tests for qamdemod")
 		//qamdemod tests finished
+	//
+		//pammod tests
+				disp("  *Test 1: Simple pam modulation")
+				P = pammod([0,1;2,3],4)
+				P_octave = [-3,-1;1,3]
+				check(P,P_octave)
+			//
+				disp("  *Test 2: pam modulation with initial phase and Gray code")
+				P = pammod([0,1,2,3;4,5,6,7],8,%pi/2,"Gray")
+				P_octave = [7,5,1,3;-7,-5,-1,-3] * %i
+				check(P,P_octave)
+		//pammod tests finished
+	//
 //The tests end
 
 exit
