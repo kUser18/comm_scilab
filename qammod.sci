@@ -1,6 +1,27 @@
 function Q = qammod(x, m)
 	//
 		//Function Description
+		//qammod: This function modulates a sequence of integers
+		//x into a complex baseband quadrature amplitude modulation signal.
+		//
+		//Calling sequence:-
+		//Psk = qammod(x,m)
+		//
+		//Parameters:
+		//x: int - matrix
+		//	The sequence of integers to be modulated.
+		//	Each entry must be in the range [0,m-1]
+		//m: int - scalar
+		//	The number of constellation points.
+		//	Must be greater than or equal to 1.
+		//	Must be an even power of 2.
+		//
+		//Example Usage
+		//	P = qammod(0:15, 16)
+		//
+		//Authors
+		//Devdatta Kathale
+		//
 		//Function Description Ends
 	//
 		//Check inputs

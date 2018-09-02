@@ -1,6 +1,46 @@
 function P = pammod(x, m, phi, datatype)
 	//
 		//Function Description
+		//pammod: This function modulates a sequence of integers
+		//x into a complex baseband phase amplitude modulation signal.
+		//
+		//Calling sequence:-
+		//pam = pammod(x,m)
+		//pam = pammod(x,m,phi)
+		//pam = pammod(x,m,phi,datatype)
+		//
+		//Parameters:
+		//x: int - matrix
+		//	The sequence of integers to be modulated.
+		//	Each entry must be in the range [0,m-1]
+		//m: int - scalar
+		//	The number of constellation points.
+		//	Must be greater than or equal to 1.
+		//phi is taken to be zero if not specified.
+		//phi: float - scalar
+		//	The initial phase (in radian) of the PAM signal.
+		//datatype is assumed to be "Bin" if not specified.
+		//datatype: string
+		//	Should be either "Bin", "bin", "Gray" or "gray"
+		//	If "Bin" or "bin", then the encoding of the signal is assumed
+		//	to be binary.
+		//	If "Gray" or "gray", then the signal is assumed to be
+		//	Gray coded, and is converted to binary before
+		//	modulation.
+		//
+		//Example Usage
+		//	Using only the signal and the number of constellation points
+		//	P = pammod(0:7, 8)
+		//
+		//	Specifying the initial phase
+		//	P = pammod(0:7, 8, %pi)
+		//
+		//	Specifying the encoding
+		//	P = pammod(0:7, 8, %pi,'Gray')
+		//
+		//Authors
+		//Devdatta Kathale
+		//
 		//Function Description Ends
 	//
 		//Find the number of arguments, and act accordingly

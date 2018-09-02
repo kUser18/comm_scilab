@@ -2,7 +2,7 @@ function signal = pskdemod(psk, m, phi, datatype)
 	//
 		//Function Description
 		//pskdemod: This function demodulates a matrix of psk modulated
-		//baseband signals (constellation points or complex numbers) into integers
+		//baseband signals (constellation points or complex numbers) into integers.
 		//
 		//Calling sequence:-
 		//signal = pskdemod(psk, m)

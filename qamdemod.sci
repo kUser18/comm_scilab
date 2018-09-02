@@ -1,6 +1,26 @@
 function Q = qamdemod(x, m)
 	//
 		//Function Description
+		//qamdemod: This function demodulates a matrix of qam modulated
+		//baseband signals (constellation points or complex numbers) into integers
+		//
+		//Calling sequence:-
+		//signal = qamdemod(qam, m)
+		//
+		//Parameters:
+		//qam: complex - matrix
+		//	The matrix of qam signals to be demodulated.
+		//m: int - scalar
+		//	The total number of constellation points.
+		//	Must be greater than or equal to 1.
+		//	Must be an even power of 2.
+		//
+		//Example Usage
+		//signal = qamdemod(qam, m)
+		//
+		//Authors
+		//Devdatta Kathale
+		//
 		//Function Description Ends
 	//
 		//Check inputs
