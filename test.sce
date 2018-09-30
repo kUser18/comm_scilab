@@ -91,17 +91,42 @@ getd
 		//qamdemod tests finished
 	//
 		//pammod tests
-				disp("  *Test 1: Simple pam modulation")
+				disp("  *Test 1: Simple PAM modulation")
 				P = pammod([0,1;2,3],4)
 				P_octave = [-3,-1;1,3]
 				check(P,P_octave)
 			//
-				disp("  *Test 2: pam modulation with initial phase and Gray code")
+				disp("  *Test 2: PAM modulation with initial phase and Gray code")
 				P = pammod([0,1,2,3;4,5,6,7],8,%pi/2,"Gray")
 				P_octave = [7,5,1,3;-7,-5,-1,-3] * %i
 				check(P,P_octave)
 		//pammod tests finished
 	//
+		//pamdemod tests
+				disp("  *Test 1: Simple PAM demodulation")
+				P = pamdemod([-3,-1;1,3],4)
+				P_octave = [0,1,2,3]
+				check(P,P_octave)
+			//
+				disp("  *Test 2: PAM modulation with initial phase and Gray code")
+				P = pamdemod([7,5,1,3;-7,-5,-1,-3] * %i,8,%pi/2,"Gray")
+				P_octave = [0,1,2,3;4,5,6,7]
+				check(P,P_octave)
+		//pamdemod tests finished
+	//
+		//genqammod tests
+				disp("  *Test 1: General QAM modulation")
+				P = genqammod([0,1;2,3],[1,%i,-%i,-1])
+				P_octave = [1,%i;-%i,-1]
+				check(P,P_octave)
+		//genqammod tests finished
+	//
+		//genqamdemod tests
+				disp("  *Test 1: General QAM demodulation")
+				P = genqamdemod([1,%i;-%i,-1],[1,%i,-%i,-1])
+				P_octave = [0,1;2,3]
+				check(P,P_octave)
+		//genqammod tests finished
 //The tests end
 
 exit
