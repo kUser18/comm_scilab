@@ -105,7 +105,7 @@ getd
 		//pamdemod tests
 				disp("  *Test 1: Simple PAM demodulation")
 				P = pamdemod([-3,-1;1,3],4)
-				P_octave = [0,1,2,3]
+				P_octave = [0,1;2,3]
 				check(P,P_octave)
 			//
 				disp("  *Test 2: PAM modulation with initial phase and Gray code")
