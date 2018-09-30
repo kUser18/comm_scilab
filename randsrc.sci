@@ -183,52 +183,52 @@ function M = randsrc(n,m,alpha,prob,seed)
 endfunction
 
 	//Running tests
-		disp('Running Tests to Check Basic Outputs')
-		disp('------Test 1')
-		disp('M = randsrc(4); one input case')
-		M = randsrc(4); disp(M)
-		disp('------Test 2')
-		disp('M = randsrc(4,3); two input case')
-		M = randsrc(4,3); disp(M)
-		disp('------Test 3')
-		disp('M = randsrc(4,3,[51,56,57]); alphabet specified')
-		M = randsrc(4,3,['a','b','c']); disp(M)
-		disp('------Test 4')
-		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); alphabet specified with probabilities')
-		currSeed = grand('getsd')
-		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); disp(M)
-		printf('Resetting the seed to what it was at the beginning of this test.\n')
-		grand('setsd',currSeed)
-		disp('This will be useful for Test 5 and Test 6.')
-		disp('------Test 5')
-		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6],8); seed specified')
-		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6],8); disp(M)
-		disp('------Test 6')
-		disp('Test to see if the seed is being restored.')
-		disp('The output should be exactly same as the output of Test 4')
-		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); check for seed restored')
-		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); disp(M)
-		disp('------')
-		disp('Finished Running Tests to Check Basic Outputs')
-		disp('************')
+//		disp('Running Tests to Check Basic Outputs')
+//		disp('------Test 1')
+//		disp('M = randsrc(4); one input case')
+//		M = randsrc(4); disp(M)
+//		disp('------Test 2')
+//		disp('M = randsrc(4,3); two input case')
+//		M = randsrc(4,3); disp(M)
+//		disp('------Test 3')
+//		disp('M = randsrc(4,3,[51,56,57]); alphabet specified')
+//		M = randsrc(4,3,['a','b','c']); disp(M)
+//		disp('------Test 4')
+//		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); alphabet specified with probabilities')
+//		currSeed = grand('getsd')
+//		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); disp(M)
+//		printf('Resetting the seed to what it was at the beginning of this test.\n')
+//		grand('setsd',currSeed)
+//		disp('This will be useful for Test 5 and Test 6.')
+//		disp('------Test 5')
+//		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6],8); seed specified')
+//		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6],8); disp(M)
+//		disp('------Test 6')
+//		disp('Test to see if the seed is being restored.')
+//		disp('The output should be exactly same as the output of Test 4')
+//		disp('M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); check for seed restored')
+//		M = randsrc(4,3,[51,56,57],[0.1,0.3,0.6]); disp(M)
+//		disp('------')
+//		disp('Finished Running Tests to Check Basic Outputs')
+//		disp('************')
 	//
-		disp('Test to check probability')
-		n=1000
-		printf("%d matrices of size 2 x 2 will be generated.',n)
-		p=0.7
-		printf('\n%f Probability of getting 1 at any entry\n',p)
-		disp('alpha=[1,0;p,1-p]')
-		M = zeros(2,2)
-		alpha=[1,0]
-		prob=[p,1-p]
-		disp(alpha)
-		for i = 1:n
-			M = M + randsrc(2,2,alpha,prob)
-		end
-		M = M/n
-		printf('Averaging over all generated matrices.\n')
-		printf('The value of all entries in the matrix below should be close to %f.\n',p)
-		disp(M)
-		disp('Tests Complete')
+//		disp('Test to check probability')
+//		n=1000
+//		printf("%d matrices of size 2 x 2 will be generated.',n)
+//		p=0.7
+//		printf('\n%f Probability of getting 1 at any entry\n',p)
+//		disp('alpha=[1,0;p,1-p]')
+//		M = zeros(2,2)
+//		alpha=[1,0]
+//		prob=[p,1-p]
+//		disp(alpha)
+//		for i = 1:n
+//			M = M + randsrc(2,2,alpha,prob)
+//		end
+//		M = M/n
+//		printf('Averaging over all generated matrices.\n')
+//		printf('The value of all entries in the matrix below should be close to %f.\n',p)
+//		disp(M)
+//		disp('Tests Complete')
 	//
-	exit
+//	exit
